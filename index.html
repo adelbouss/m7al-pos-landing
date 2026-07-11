@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>M7al (محل) - Premium Point of Sale (POS) Application</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="M7al (محل) is a smart offline-first Point of Sale POS solution for modern businesses. Manage inventory, sales, customer debts, and visual reports.">
+  <meta name="keywords" content="POS, Point of Sale, inventory, cashier, retail, offline POS, M7al, محل, point of sale software">
+  <meta name="author" content="M7al team">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='4' fill='%232563eb'/%3E%3Cpath d='M7 17h10V9H7v8zm2-6h6v4H9v-4z' fill='white'/%3E%3C/svg%3E">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Loading Animation Overlay -->
+  <div id="loader">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Sticky Header / Navbar -->
+  <header class="header" id="header">
+    <div class="container navbar">
+      <a href="#home" class="logo">
+        <div class="logo-icon"><i class="fas fa-store"></i></div>
+        <span>M7al</span>
+      </a>
+      
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#home" class="nav-link" data-i18n="nav-home">Home</a>
+        <a href="#features" class="nav-link" data-i18n="nav-features">Features</a>
+        <a href="#screenshots" class="nav-link" data-i18n="nav-screenshots">Screenshots</a>
+        <a href="#how-it-works" class="nav-link" data-i18n="nav-how-it-works">How it Works</a>
+        <a href="#pricing" class="nav-link" data-i18n="nav-pricing">Pricing</a>
+        <a href="#activation" class="nav-link" data-i18n="nav-activation">Activation</a>
+        <a href="#faq" class="nav-link" data-i18n="nav-faq">FAQ</a>
+        <a href="#contact" class="nav-link" data-i18n="nav-contact">Contact Us</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Light/Dark Mode Toggle -->
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Theme">
+          <i class="fas fa-moon"></i>
+          <i class="fas fa-sun"></i>
+        </button>
+
+        <!-- Language Selector -->
+        <div class="lang-selector">
+          <button class="lang-btn" id="lang-btn">
+            <span id="current-lang">EN 🇬🇧</span> <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="lang-dropdown" id="lang-dropdown">
+            <div class="lang-option active" data-lang="en">EN 🇬🇧</div>
+            <div class="lang-option" data-lang="ar">AR 🇸🇦</div>
+            <div class="lang-option" data-lang="fr">FR 🇫🇷</div>
+            <div class="lang-option" data-lang="es">ES 🇪🇸</div>
+          </div>
+        </div>
+
+        <!-- Burger Menu (Mobile Toggle) -->
+        <button class="burger-menu" id="burger-menu" aria-label="Open Navigation Menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero section" id="home">
+    <div class="bg-gradient-mesh"></div>
+    <div class="container hero-grid">
+      <div class="hero-content reveal">
+        <span class="hero-badge" data-i18n="hero-badge">
+          <i class="fas fa-bolt"></i> Premium Offline POS Software
+        </span>
+        <h1 class="hero-title" data-i18n="hero-title">
+          The Smart POS Solution for <span>Modern Businesses</span>
+        </h1>
+        <p class="hero-subtitle" data-i18n="hero-subtitle">
+          Simplify sales, manage inventory, track customer debts, expenses, and view visual reports. Fast, offline-first, and highly secure local database.
+        </p>
+        <div class="hero-btns">
+          <a href="#pricing" class="btn btn-primary">
+            <i class="fas fa-download"></i> <span data-i18n="btn-download">Download App</span>
+          </a>
+          <a href="#tutorials" class="btn btn-secondary">
+            <i class="fas fa-play"></i> <span data-i18n="btn-watch-demo">Watch Demo</span>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Interactive Device Mockup (POS UI View) -->
+      <div class="hero-mockup-wrapper reveal">
+        <div class="device-mockup">
+          <div class="device-screen">
+            <div class="mock-app-header">
+              <div class="mock-app-logo">
+                <i class="fas fa-store"></i> M7al POS (محل)
+              </div>
+              <div class="mock-app-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+            <div class="mock-app-body">
+              <div class="mock-app-sidebar">
+                <div class="mock-sidebar-item active"></div>
+                <div class="mock-sidebar-item"></div>
+                <div class="mock-sidebar-item"></div>
+                <div class="mock-sidebar-item"></div>
+                <div class="mock-sidebar-item"></div>
+              </div>
+              <div class="mock-app-main">
+                <div class="mock-main-stats">
+                  <div class="mock-stat-card">
+                    <div class="mock-stat-bar"></div>
+                    <div class="mock-stat-bar short green"></div>
+                  </div>
+                  <div class="mock-stat-card">
+                    <div class="mock-stat-bar"></div>
+                    <div class="mock-stat-bar short"></div>
+                  </div>
+                  <div class="mock-stat-card">
+                    <div class="mock-stat-bar"></div>
+                    <div class="mock-stat-bar short"></div>
+                  </div>
+                </div>
+                <div class="mock-chart-container">
+                  <div class="mock-chart-bars">
+                    <div class="mock-chart-bar" style="height: 55%"></div>
+                    <div class="mock-chart-bar"></div>
+                    <div class="mock-chart-bar"></div>
+                    <div class="mock-chart-bar"></div>
+                    <div class="mock-chart-bar"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="mock-app-cart">
+                <div class="mock-cart-items">
+                  <div class="mock-cart-item"></div>
+                  <div class="mock-cart-item"></div>
+                  <div class="mock-cart-item"></div>
+                </div>
+                <div class="mock-cart-total"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics Counters Section -->
+  <section class="stats-section section" id="stats-section">
+    <div class="container stats-grid">
+      <div class="stat-item">
+        <span class="stat-number" data-target="10000" data-suffix="+">0</span>
+        <span class="stat-label" data-i18n="stat-downloads">Downloads</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-target="99.9" data-suffix="%">0</span>
+        <span class="stat-label" data-i18n="stat-reliability">Offline Reliability</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-target="5.0" data-suffix="">0</span>
+        <span class="stat-label" data-i18n="stat-rating">App Store Rating</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-target="4" data-suffix="">0</span>
+        <span class="stat-label" data-i18n="stat-languages">Languages</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features section" id="features">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag" data-i18n="features-tag">Features</span>
+        <h2 class="section-title" data-i18n="features-title">All-in-One Powerful Features</h2>
+        <p class="section-desc" data-i18n="features-desc">Everything you need to run your shop or store efficiently, offline or online.</p>
+      </div>
+      
+      <div class="features-grid">
+        <!-- Feature 1 -->
+        <div class="feature-card reveal">
+          <div class="feature-icon-wrapper"><i class="fas fa-boxes-stacked"></i></div>
+          <h3 class="feature-title" data-i18n="f1-title">Inventory Management</h3>
+          <p class="feature-desc" data-i18n="f1-desc">Track stock levels, set low-stock alerts, and categorize products effortlessly.</p>
+        </div>
+        <!-- Feature 2 -->
+        <div class="feature-card reveal">
+          <div class="feature-icon-wrapper"><i class="fas fa-barcode"></i></div>
+          <h3 class="feature-title" data-i18n="f2-title">Barcode & QR Scanner</h3>
+          <p class="feature-desc" data-i18n="f2-desc">Scan barcodes quickly using your device camera or external scanning hardware.</p>
+        </div>
+        <!-- Feature 3 -->
+        <div class="feature-card reveal">
+          <div class="feature-icon-wrapper"><i class="fas fa-file-invoice-dollar"></i></div>
+          <h3 class="feature-title" data-i18n="f3-title">Sales & Invoices</h3>
+          <p class="feature-desc" data-i18n="f3-desc">Generate neat digital invoices, receipts, and process checkouts in seconds.</p>
+        </div>
+        <!-- Feature 4 -->
+        <div class="feature-card reveal">
+          <div class="feature-icon-wrapper"><i class="fas fa-users"></i></div>
+          <h3 class="feature-title" data-i18n="f4-title">Customer Management</h3>
+          <p class="feature-desc" data-i18n="f4-desc">Store customer contacts, track sales histories, and run loyalty programs.</p>
+        </div>
+        <!-- Feature 5 -->
+        <div class="feature-card reveal">
+          <div class="feature-icon-wrapper"><i class="fas fa-truck-field"></i></div>
+          <h3 class="feature-title" data-i18n="f5-title">Supplier Management</h3>
+          <p class="feature-desc" data-i18n="f5-desc">Keep track of supply chains, purchase orders, and supplier outstanding logs.</p>
+        </div>
+        <!-- Feature 6 -->
+        <div class="feature-card reveal">
+          <div class="feature-icon-wrapper"><i class="fas fa-calculator"></i></div>
+          <h3 class="feature-title" data-i18n="f6-title">Debt Tracking</h3>
+          <p class="feature-desc" data-i18n="f6-desc">Manage debts seamlessly with automatic reminders and detailed statements.</p>
+        </div>
+        <!-- Feature 7 -->
+        <div class="feature-card reveal">
+          <div class="feature-icon-wrapper"><i class="fas fa-wallet"></i></div>
+          <h3 class="feature-title" data-i18n="f7-title">Expense Tracking</h3>
+          <p class="feature-desc" data-i18n="f7-desc">Log daily running costs, rent, utilities, and maintain healthy bookkeeping.</p>
+        </div>
+        <!-- Feature 8 -->
+        <div class="feature-card reveal">
+          <div class="feature-icon-wrapper"><i class="fas fa-chart-line"></i></div>
+          <h3 class="feature-title" data-i18n="f8-title">Profit Reports</h3>
+          <p class="feature-desc" data-i18n="f8-desc">Get comprehensive analytics on profit margins, net revenue, and products.</p>
+        </div>
+        <!-- Feature 9 -->
+        <div class="feature-card reveal">
+          <div class="feature-icon-wrapper"><i class="fas fa-gauge-high"></i></div>
+          <h3 class="feature-title" data-i18n="f9-title">Statistics Dashboard</h3>
+          <p class="feature-desc" data-i18n="f9-desc">A visual control panel illustrating best sellers, customer trends, and stats.</p>
+        </div>
+        <!-- Feature 10 -->
+        <div class="feature-card reveal">
+          <div class="feature-icon-wrapper"><i class="fas fa-wifi"></i></div>
+          <h3 class="feature-title" data-i18n="f10-title">Offline Mode</h3>
+          <p class="feature-desc" data-i18n="f10-desc">Run fully offline. Data syncs to backups automatically once internet connects.</p>
+        </div>
+        <!-- Feature 11 -->
+        <div class="feature-card reveal">
+          <div class="feature-icon-wrapper"><i class="fas fa-shield-halved"></i></div>
+          <h3 class="feature-title" data-i18n="f11-title">Secure Local Database</h3>
+          <p class="feature-desc" data-i18n="f11-desc">Your data is saved and encrypted on your local device. Complete privacy.</p>
+        </div>
+        <!-- Feature 12 -->
+        <div class="feature-card reveal">
+          <div class="feature-icon-wrapper"><i class="fas fa-magnifying-glass"></i></div>
+          <h3 class="feature-title" data-i18n="f12-title">Smart Fast Search</h3>
+          <p class="feature-desc" data-i18n="f12-desc">Locate products, invoices, and supplier details instantly with indexing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screenshots Gallery Section -->
+  <section class="screenshots-gallery section" id="screenshots">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag" data-i18n="gallery-tag">Screenshots</span>
+        <h2 class="section-title" data-i18n="gallery-title">Explore the Application</h2>
+        <p class="section-desc" data-i18n="gallery-desc">Take a look at M7al's premium, clean, and intuitive user interface designed for speed.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <!-- Card 1 -->
+        <div class="gallery-card reveal">
+          <div class="gallery-img-container">
+            <div class="gallery-vector-mock">
+              <div class="vector-mock-header"></div>
+              <div class="vector-mock-row">
+                <div class="vector-mock-col" style="flex: 1.5">
+                  <div class="vector-mock-line blue"></div>
+                  <div class="vector-mock-line"></div>
+                  <div class="vector-mock-line short"></div>
+                </div>
+                <div class="vector-mock-col">
+                  <div style="background-color: #22c55e; height: 10px; border-radius: 3px; width: 60%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-card-body">
+            <h3 class="gallery-card-title" data-i18n="screenshot-1">Sales & Checkout Screen</h3>
+            <p class="gallery-card-desc" data-i18n="screenshot-1-desc">Easy-to-use checkout interface with quick barcode adding.</p>
+          </div>
+        </div>
+        
+        <!-- Card 2 -->
+        <div class="gallery-card reveal">
+          <div class="gallery-img-container">
+            <div class="gallery-vector-mock">
+              <div class="vector-mock-header" style="width: 30%"></div>
+              <div class="inventory-mock-grid">
+                <div class="inventory-mock-item"></div>
+                <div class="inventory-mock-item"></div>
+                <div class="inventory-mock-item"></div>
+                <div class="inventory-mock-item"></div>
+                <div class="inventory-mock-item"></div>
+                <div class="inventory-mock-item"></div>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-card-body">
+            <h3 class="gallery-card-title" data-i18n="screenshot-2">Inventory Dashboard</h3>
+            <p class="gallery-card-desc" data-i18n="screenshot-2-desc">Manage list of items, import Excel, and modify prices.</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="gallery-card reveal">
+          <div class="gallery-img-container">
+            <div class="gallery-vector-mock">
+              <div class="vector-mock-header"></div>
+              <div class="vector-mock-row">
+                <div class="vector-mock-col" style="justify-content: flex-end; align-items: center">
+                  <div style="width: 30px; height: 30px; border-radius: 50%; border: 4px solid #2563eb; border-top-color: transparent;"></div>
+                </div>
+                <div class="vector-mock-col">
+                  <div class="vector-mock-line blue"></div>
+                  <div class="vector-mock-line"></div>
+                  <div class="vector-mock-line short"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="gallery-card-body">
+            <h3 class="gallery-card-title" data-i18n="screenshot-3">Analytics & Reports</h3>
+            <p class="gallery-card-desc" data-i18n="screenshot-3-desc">Visual pie charts and line graphs showing monthly growth.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Tutorials Section -->
+  <section class="tutorials section" id="tutorials">
+    <div class="container tutorials-container">
+      <div class="section-header reveal">
+        <span class="section-tag" data-i18n="video-tag">Video Guides</span>
+        <h2 class="section-title" data-i18n="video-title">See M7al in Action</h2>
+        <p class="section-desc" data-i18n="video-desc">Learn how to configure your store and start making sales in under five minutes.</p>
+      </div>
+
+      <div class="video-player-mock reveal" id="video-mock">
+        <div class="video-thumbnail-overlay">
+          <div class="play-btn-circle"><i class="fas fa-play"></i></div>
+        </div>
+        <div id="youtube-placeholder" style="width: 100%; height: 100%;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="how-it-works section" id="how-it-works">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag" data-i18n="how-tag">Workflow</span>
+        <h2 class="section-title" data-i18n="how-title">Get Started in 4 Easy Steps</h2>
+        <p class="section-desc" data-i18n="how-desc">No complicated signups. Just install, set up your shop, and you're good to go.</p>
+      </div>
+
+      <div class="steps-grid">
+        <!-- Step 1 -->
+        <div class="step-card reveal">
+          <div class="step-number">1</div>
+          <h3 class="step-title" data-i18n="step1-title">1. Install App</h3>
+          <p class="step-desc" data-i18n="step1-desc">Download and install M7al on your Windows desktop or Android device.</p>
+        </div>
+        <!-- Step 2 -->
+        <div class="step-card reveal">
+          <div class="step-number">2</div>
+          <h3 class="step-title" data-i18n="step2-title">2. Add Products</h3>
+          <p class="step-desc" data-i18n="step2-desc">Input products manually or upload an Excel catalog with prices.</p>
+        </div>
+        <!-- Step 3 -->
+        <div class="step-card reveal">
+          <div class="step-number">3</div>
+          <h3 class="step-title" data-i18n="step3-title">3. Start Selling</h3>
+          <p class="step-desc" data-i18n="step3-desc">Scan barcodes, select products, and print custom receipts instantly.</p>
+        </div>
+        <!-- Step 4 -->
+        <div class="step-card reveal">
+          <div class="step-number">4</div>
+          <h3 class="step-title" data-i18n="step4-title">4. View Reports</h3>
+          <p class="step-desc" data-i18n="step4-desc">Monitor your profit margins, customer debts, and expenses live.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="pricing section" id="pricing">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag" data-i18n="pricing-tag">Pricing Plan</span>
+        <h2 class="section-title" data-i18n="pricing-title">Simple, Transparent Pricing</h2>
+        <p class="section-desc" data-i18n="pricing-desc">Select the plan that matches your business size. No hidden fees.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- Tier 1 -->
+        <div class="pricing-card reveal">
+          <h3 class="pricing-name" data-i18n="plan-trial">Free Trial</h3>
+          <div class="pricing-price" data-i18n="price-free">$0<span data-i18n="price-period-free">/ 14 Days</span></div>
+          <p class="pricing-desc" data-i18n="plan-trial-desc">Perfect for trying out all features.</p>
+          <div class="pricing-divider"></div>
+          <ul class="pricing-features-list">
+            <li class="pricing-feature"><i class="fas fa-check"></i><span data-i18n="pricing-feature-offline">Full offline support</span></li>
+            <li class="pricing-feature"><i class="fas fa-check"></i><span data-i18n="pricing-feature-items-100">Up to 100 products</span></li>
+            <li class="pricing-feature"><i class="fas fa-check"></i><span data-i18n="pricing-feature-debts">Debt & Expense tracking</span></li>
+            <li class="pricing-feature"><i class="fas fa-check"></i><span data-i18n="pricing-feature-devices-1">1 device license</span></li>
+            <li class="pricing-feature disabled"><i class="fas fa-times"></i><span data-i18n="pricing-feature-support-premium">24/7 Premium support</span></li>
+          </ul>
+          <a href="#activation" class="btn btn-secondary" data-i18n="btn-start-trial">Start 14-Day Trial</a>
+        </div>
+        
+        <!-- Tier 2 -->
+        <div class="pricing-card pricing-card-popular reveal">
+          <h3 class="pricing-name" data-i18n="plan-standard">Standard</h3>
+          <div class="pricing-price" data-i18n="price-standard">$49<span data-i18n="price-period-life">/ Lifetime</span></div>
+          <p class="pricing-desc" data-i18n="plan-standard-desc">For small shops and growing retailers.</p>
+          <div class="pricing-divider"></div>
+          <ul class="pricing-features-list">
+            <li class="pricing-feature"><i class="fas fa-check"></i><span data-i18n="pricing-feature-offline">Full offline support</span></li>
+            <li class="pricing-feature"><i class="fas fa-check"></i><span data-i18n="pricing-feature-items-unlimited">Unlimited products</span></li>
+            <li class="pricing-feature"><i class="fas fa-check"></i><span data-i18n="pricing-feature-debts">Debt & Expense tracking</span></li>
+            <li class="pricing-feature"><i class="fas fa-check"></i><span data-i18n="pricing-feature-devices-1">1 device license</span></li>
+            <li class="pricing-feature"><i class="fas fa-check"></i><span data-i18n="pricing-feature-support-basic">Community support</span></li>
+          </ul>
+          <a href="#activation" class="btn btn-primary" data-i18n="btn-buy-license">Buy License</a>
+        </div>
+
+        <!-- Tier 3 -->
+        <div class="pricing-card reveal">
+          <h3 class="pricing-name" data-i18n="plan-professional">Professional</h3>
+          <div class="pricing-price" data-i18n="price-professional">$99<span data-i18n="price-period-life">/ Lifetime</span></div>
+          <p class="pricing-desc" data-i18n="plan-professional-desc">For large businesses requiring full control.</p>
+          <div class="pricing-divider"></div>
+          <ul class="pricing-features-list">
+            <li class="pricing-feature"><i class="fas fa-check"></i><span data-i18n="pricing-feature-offline">Full offline support</span></li>
+            <li class="pricing-feature"><i class="fas fa-check"></i><span data-i18n="pricing-feature-items-unlimited">Unlimited products</span></li>
+            <li class="pricing-feature"><i class="fas fa-check"></i><span data-i18n="pricing-feature-debts">Debt & Expense tracking</span></li>
+            <li class="pricing-feature"><i class="fas fa-check"></i><span data-i18n="pricing-feature-devices-3">Up to 3 devices link</span></li>
+            <li class="pricing-feature"><i class="fas fa-check"></i><span data-i18n="pricing-feature-support-premium">24/7 Premium support</span></li>
+          </ul>
+          <a href="#activation" class="btn btn-secondary" data-i18n="btn-buy-license">Buy License</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Application Activation Section -->
+  <section class="activation-section section" id="activation">
+    <div class="container activation-grid">
+      <div class="activation-info reveal">
+        <span class="section-tag" data-i18n="activation-tag">Software Activation</span>
+        <h2 class="section-title" data-i18n="activation-title">Activate Your Software</h2>
+        <p class="section-desc" data-i18n="activation-desc">Unlock the lifetime standard or professional version using your activation key.</p>
+        
+        <div class="activation-step">
+          <div class="activation-step-num">1</div>
+          <div class="activation-step-text">
+            <h4 data-i18n="activation-instruction">How to activate:</h4>
+            <p data-i18n="activation-step1">Copy the unique Device ID displayed inside the application.</p>
+          </div>
+        </div>
+        <div class="activation-step">
+          <div class="activation-step-num">2</div>
+          <div class="activation-step-text">
+            <p data-i18n="activation-step2">Contact our sales team on WhatsApp to purchase your key.</p>
+          </div>
+        </div>
+        <div class="activation-step">
+          <div class="activation-step-num">3</div>
+          <div class="activation-step-text">
+            <p data-i18n="activation-step3">Paste the received Activation Code below and press Activate.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="activation-card reveal">
+        <form class="activation-form" id="activation-form">
+          <div class="form-group">
+            <label for="device-id" data-i18n="label-device-id">Your Device ID</label>
+            <div class="input-wrapper">
+              <i class="fas fa-laptop-code"></i>
+              <input type="text" id="device-id" class="form-input" readonly data-i18n-placeholder="placeholder-device-id">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="activation-code" data-i18n="label-activation-code">Activation Code</label>
+            <div class="input-wrapper">
+              <i class="fas fa-key"></i>
+              <input type="text" id="activation-code" class="form-input" required data-i18n-placeholder="placeholder-activation-code">
+            </div>
+          </div>
+          
+          <button type="submit" class="btn btn-primary" id="btn-activate-submit" style="width: 100%; margin-top: 1rem;">
+            <i class="fas fa-shield-check"></i> <span data-i18n="btn-activate">Activate Software</span>
+          </button>
+          
+          <!-- Mock Feedback Banner -->
+          <div class="activation-status-box" id="activation-status"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials-section section" id="testimonials">
+    <div class="container testimonials-container">
+      <button class="slider-btn slider-btn-prev" id="slider-prev" aria-label="Previous Testimonial">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      
+      <div class="testimonials-slider" id="testimonials-slider">
+        <!-- Slide 1 -->
+        <div class="testimonial-slide">
+          <i class="fas fa-quote-left testimonial-quote-icon"></i>
+          <p class="testimonial-quote">"M7al completely transformed how I manage my inventory. The offline scanner is incredibly fast and reliable!"</p>
+          <div class="testimonial-avatar">A</div>
+          <h4 class="testimonial-author-name">Ahmad Al-Masri</h4>
+          <span class="testimonial-author-role">Supermarket Owner, Amman</span>
+        </div>
+        <!-- Slide 2 -->
+        <div class="testimonial-slide">
+          <i class="fas fa-quote-left testimonial-quote-icon"></i>
+          <p class="testimonial-quote">"The profit and expense tracking dashboard is so detailed. I can see my business growth stats instantly."</p>
+          <div class="testimonial-avatar">S</div>
+          <h4 class="testimonial-author-name">Sofia Dupont</h4>
+          <span class="testimonial-author-role">Boutique Owner, Paris</span>
+        </div>
+        <!-- Slide 3 -->
+        <div class="testimonial-slide">
+          <i class="fas fa-quote-left testimonial-quote-icon"></i>
+          <p class="testimonial-quote">"No subscriptions, secure local database, and superb performance. It is exactly what my business needed."</p>
+          <div class="testimonial-avatar">C</div>
+          <h4 class="testimonial-author-name">Carlos Gomez</h4>
+          <span class="testimonial-author-role">Cafeteria Manager, Madrid</span>
+        </div>
+      </div>
+
+      <button class="slider-btn slider-btn-next" id="slider-next" aria-label="Next Testimonial">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+      
+      <div class="slider-dots" id="slider-dots"></div>
+    </div>
+  </section>
+
+  <!-- FAQ Section (Accordion) -->
+  <section class="faq section" id="faq">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag" data-i18n="faq-tag">FAQ</span>
+        <h2 class="section-title" data-i18n="faq-title">Frequently Asked Questions</h2>
+        <p class="section-desc" data-i18n="faq-desc">Find quick answers to common questions about M7al licenses, features, and setup.</p>
+      </div>
+
+      <div class="faq-container">
+        <!-- Q1 -->
+        <div class="faq-item reveal">
+          <div class="faq-header">
+            <span data-i18n="faq-q1">What is M7al POS?</span>
+            <div class="faq-icon"><i class="fas fa-plus"></i></div>
+          </div>
+          <div class="faq-body">
+            <div class="faq-content" data-i18n="faq-a1">
+              M7al is a premium offline-first Point of Sale application designed for small and medium businesses to manage inventory, track sales, debts, expenses, and generate real-time reports easily.
+            </div>
+          </div>
+        </div>
+        <!-- Q2 -->
+        <div class="faq-item reveal">
+          <div class="faq-header">
+            <span data-i18n="faq-q2">Does it require an internet connection to run?</span>
+            <div class="faq-icon"><i class="fas fa-plus"></i></div>
+          </div>
+          <div class="faq-body">
+            <div class="faq-content" data-i18n="faq-a2">
+              No, M7al works completely offline. All sales transactions, inventory records, and stats are processed locally on your device. Internet is only required for optional cloud backup synchronization.
+            </div>
+          </div>
+        </div>
+        <!-- Q3 -->
+        <div class="faq-item reveal">
+          <div class="faq-header">
+            <span data-i18n="faq-q3">How is my database secured?</span>
+            <div class="faq-icon"><i class="fas fa-plus"></i></div>
+          </div>
+          <div class="faq-body">
+            <div class="faq-content" data-i18n="faq-a3">
+              Your database is saved directly on your local device. It is encrypted, ensuring complete privacy. No third parties or servers have access to your sensitive data.
+            </div>
+          </div>
+        </div>
+        <!-- Q4 -->
+        <div class="faq-item reveal">
+          <div class="faq-header">
+            <span data-i18n="faq-q4">Can I use it on multiple devices?</span>
+            <div class="faq-icon"><i class="fas fa-plus"></i></div>
+          </div>
+          <div class="faq-body">
+            <div class="faq-content" data-i18n="faq-a4">
+              Yes, depending on your license type. The Standard plan supports 1 device, while the Professional plan allows synchronization and linking across up to 3 devices in the local network.
+            </div>
+          </div>
+        </div>
+        <!-- Q5 -->
+        <div class="faq-item reveal">
+          <div class="faq-header">
+            <span data-i18n="faq-q5">How does the software activation work?</span>
+            <div class="faq-icon"><i class="fas fa-plus"></i></div>
+          </div>
+          <div class="faq-body">
+            <div class="faq-content" data-i18n="faq-a5">
+              When you install the app, it generates a unique Device ID. You share this ID with us via WhatsApp or email to purchase a lifetime key. Paste that key in the Activation section to unlock the full app.
+            </div>
+          </div>
+        </div>
+        <!-- Q6 -->
+        <div class="faq-item reveal">
+          <div class="faq-header">
+            <span data-i18n="faq-q6">Are there any monthly subscriptions?</span>
+            <div class="faq-icon"><i class="fas fa-plus"></i></div>
+          </div>
+          <div class="faq-body">
+            <div class="faq-content" data-i18n="faq-a6">
+              No. Standard and Professional plans are one-time lifetime purchases. You pay once and enjoy lifetime access, updates, and offline usage with no recurring fees.
+            </div>
+          </div>
+        </div>
+        <!-- Q7 -->
+        <div class="faq-item reveal">
+          <div class="faq-header">
+            <span data-i18n="faq-q7">Can I print receipts using barcode/thermal printers?</span>
+            <div class="faq-icon"><i class="fas fa-plus"></i></div>
+          </div>
+          <div class="faq-body">
+            <div class="faq-content" data-i18n="faq-a7">
+              Yes, M7al supports all standard USB, Bluetooth, and network thermal printers (58mm and 80mm sizes) and prints customizable receipts and barcodes.
+            </div>
+          </div>
+        </div>
+        <!-- Q8 -->
+        <div class="faq-item reveal">
+          <div class="faq-header">
+            <span data-i18n="faq-q8">What kind of support do you offer?</span>
+            <div class="faq-icon"><i class="fas fa-plus"></i></div>
+          </div>
+          <div class="faq-body">
+            <div class="faq-content" data-i18n="faq-a8">
+              We provide email support for all users, and premium 24/7 WhatsApp/call support for Professional license holders to assist with database backup, installation, and general queries.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Box Section -->
+  <section class="cta-section container reveal">
+    <div class="cta-box">
+      <h2 data-i18n="cta-title">Ready to Modernize Your Retail Shop?</h2>
+      <p data-i18n="cta-desc">Join thousands of businesses who trust M7al to run their daily inventory and sales.</p>
+      <div class="cta-btns">
+        <a href="#pricing" class="btn btn-secondary">
+          <i class="fas fa-shopping-bag"></i> <span data-i18n="btn-buy-now">Buy Now</span>
+        </a>
+        <a href="#contact" class="btn btn-secondary">
+          <i class="fas fa-comment-dots"></i> <span data-i18n="nav-contact">Contact Us</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Us Section -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag" data-i18n="contact-tag">Contact</span>
+        <h2 class="section-title" data-i18n="contact-title">Get In Touch</h2>
+        <p class="section-desc" data-i18n="contact-desc">Have questions about licensing or custom features? Reach out to our local team.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <p class="contact-info-desc" data-i18n="contact-info-text">We are here to help you deploy M7al in your store. Contact us via any of these channels:</p>
+          
+          <div class="contact-channels">
+            <!-- WhatsApp -->
+            <a href="https://wa.me/966500000000" target="_blank" class="contact-card">
+              <div class="contact-icon-box"><i class="fab fa-whatsapp"></i></div>
+              <h4 class="contact-card-title" data-i18n="label-whatsapp">WhatsApp Support</h4>
+              <span class="contact-card-value" data-i18n="val-whatsapp">+966 50 000 0000</span>
+            </a>
+            <!-- Facebook -->
+            <a href="https://facebook.com" target="_blank" class="contact-card">
+              <div class="contact-icon-box"><i class="fab fa-facebook-f"></i></div>
+              <h4 class="contact-card-title" data-i18n="label-facebook">Facebook Page</h4>
+              <span class="contact-card-value" data-i18n="val-facebook">fb.com/m7al.pos</span>
+            </a>
+            <!-- Email -->
+            <a href="mailto:support@m7al.com" class="contact-card">
+              <div class="contact-icon-box"><i class="far fa-envelope"></i></div>
+              <h4 class="contact-card-title" data-i18n="label-email">Email Support</h4>
+              <span class="contact-card-value" data-i18n="val-email">support@m7al.com</span>
+            </a>
+            <!-- Location -->
+            <div class="contact-card">
+              <div class="contact-icon-box"><i class="fas fa-map-pin"></i></div>
+              <h4 class="contact-card-title" data-i18n="label-location">Office Location</h4>
+              <span class="contact-card-value" data-i18n="val-location">Riyadh, Saudi Arabia</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Google/OSM Map Mockup iframe -->
+        <div class="contact-map-wrapper reveal">
+          <iframe 
+            width="100%" 
+            height="100%" 
+            frameborder="0" 
+            scrolling="no" 
+            marginheight="0" 
+            marginwidth="0" 
+            src="https://www.openstreetmap.org/export/embed.html?bbox=46.542282104492195%2C24.63673752538183%2C46.88354492187501%2C24.783685934177727&amp;layer=mapnic" 
+            style="border: none;">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid reveal">
+      <div class="footer-brand">
+        <a href="#home" class="logo">
+          <div class="logo-icon"><i class="fas fa-store"></i></div>
+          <span>M7al</span>
+        </a>
+        <p class="footer-brand-desc" data-i18n="footer-desc">The premium, lightweight offline POS application engineered for modern retailers.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-title" data-i18n="footer-col-company">Company</h4>
+        <div class="footer-links">
+          <a href="#" class="footer-link" data-i18n="link-about">About Us</a>
+          <a href="#" class="footer-link" data-i18n="link-careers">Careers</a>
+          <a href="#" class="footer-link" data-i18n="link-blog">Blog</a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-title" data-i18n="footer-col-product">Product</h4>
+        <div class="footer-links">
+          <a href="#pricing" class="footer-link" data-i18n="link-download">Download App</a>
+          <a href="#pricing" class="footer-link" data-i18n="link-pricing">Pricing</a>
+          <a href="#" class="footer-link" data-i18n="link-security">Security</a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-title" data-i18n="footer-col-legal">Legal</h4>
+        <div class="footer-links">
+          <a href="#" class="footer-link" data-i18n="link-privacy">Privacy Policy</a>
+          <a href="#" class="footer-link" data-i18n="link-terms">Terms of Service</a>
+          <a href="#" class="footer-link" data-i18n="link-refund">Refund Policy</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <span data-i18n="footer-copyright">&copy; 2026 M7al POS. All rights reserved.</span>
+      <div class="footer-bottom-links">
+        <a href="#" data-i18n="link-privacy">Privacy Policy</a>
+        <a href="#" data-i18n="link-terms">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-top-btn" id="scroll-top-btn" aria-label="Scroll to Top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- Script.js -->
+  <script src="script.js"></script>
+</body>
+</html>
