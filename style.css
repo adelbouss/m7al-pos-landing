@@ -1360,17 +1360,13 @@ html[dir="rtl"] .pricing-price {
 
 .form-input {
   width: 100%;
-  padding: 0.875rem 1rem 0.875rem 2.75rem;
+  padding-block: 0.875rem;
+  padding-inline: 2.75rem 1rem;
   background-color: var(--bg-secondary);
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius-md);
   transition: all var(--transition-fast);
   font-family: inherit;
-}
-
-/* Adjust input paddings for RTL */
-html[dir="rtl"] .form-input {
-  padding: 0.875rem 2.75rem 0.875rem 1rem;
 }
 
 .form-input:focus {
@@ -1567,22 +1563,11 @@ html[dir="rtl"] .form-input {
 }
 
 .slider-btn-prev {
-  left: 0;
+  inset-inline-start: 0;
 }
 
 .slider-btn-next {
-  right: 0;
-}
-
-/* Adjust Testimonials Nav Buttons for RTL */
-html[dir="rtl"] .slider-btn-prev {
-  left: auto;
-  right: 0;
-}
-
-html[dir="rtl"] .slider-btn-next {
-  right: auto;
-  left: 0;
+  inset-inline-end: 0;
 }
 
 /* Slider Dots indicator */
@@ -2011,10 +1996,20 @@ html[dir="rtl"] .slider-btn-next {
     border-top: 1px solid var(--border-color);
     box-shadow: var(--shadow-lg);
     z-index: 998;
+    overflow-y: auto;
   }
   
   .nav-menu.active {
     inset-inline-start: 0;
+  }
+
+  /* Prevent mockup inner elements from causing overflow inside the small mock container */
+  .mock-app-body {
+    grid-template-columns: 1fr;
+  }
+  .mock-app-sidebar,
+  .mock-app-cart {
+    display: none;
   }
   
   .burger-menu {
